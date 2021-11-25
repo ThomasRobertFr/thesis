@@ -1,0 +1,106 @@
+\documentclass[
+    a4paper,
+    fontsize=12pt,
+    footinclude=true,
+    headinclude=true
+]{scrbook}
+
+\usepackage{scrhack}
+\usepackage{silence}
+\WarningFilter{latex}{You have requested package}
+\usepackage{template/preamble}
+\setlength{\parskip}{0.3em}
+
+\renewcommand{\bf}{\normalfont \bfseries}
+
+\bibliography{biblio.bib}
+
+\usepackage{ifthen}
+
+\newcommand{\titlecaption}[3][]{\caption[#2]{\textbf{#2}\ifthenelse{\equal{#1}{}}{. }{ }#3}}
+
+\newcommand{\todo}[1]{\textcolor{BrickRed}{[TODO #1]}}
+\newcommand{\note}[1]{\textcolor{PineGreen}{(#1)}}
+\newcommand{\review}[1]{\textcolor{RoyalBlue}{#1}}
+\newcommand{\startreview}{\color{RoyalBlue}}
+\newcommand{\stopreview}{\color{black}}
+\definecolor{yellowdark}{HTML}{BC8C00}
+\definecolor{bluedark}{HTML}{2F528F}
+\definecolor{greendark}{HTML}{507E32}
+\definecolor{bluefig}{HTML}{5B9BD5}
+
+\definecolor{lightblueborder}{HTML}{41719C}
+\definecolor{lightbluefill}{HTML}{5E9CD3}
+
+\let\oldleftmark=\leftmark
+
+\newboolean{skipIntro}
+\newboolean{skipSHADE}
+\newboolean{skipHN}
+\newboolean{skipDual}
+
+% By setting this to true, you skip the compiling of some chapters
+% \setboolean{skipIntro}{true}
+% \setboolean{skipSHADE}{true}
+% \setboolean{skipHN}{true}
+% \setboolean{skipDual}{true}
+
+\mtcsetoffset{minitoc}{-0.80em}
+\setlength{\mtcindent}{-0.80em}
+
+\begin{document}
+
+	\dominitoc
+	\selectlanguage{english}
+
+	\frontmatter
+
+	\input{00_frontmatter.tex}
+	\cleardoublepage
+	% \faketableofcontents
+	\input{00_accronyms.tex}
+
+	\mainmatter
+	
+	\input{01_introduction.tex}
+	\cleardoublepage
+
+	\acresetall
+	\input{02_shade.tex} 
+	\cleardoublepage
+	\let\leftmark=\oldleftmark
+	
+	\acresetall
+	\input{03_hybridnet.tex}
+	\cleardoublepage
+	\let\leftmark=\oldleftmark
+
+	\acresetall
+	\input{04_dualdis.tex}
+	\cleardoublepage
+	\let\leftmark=\oldleftmark
+
+	\acresetall
+	\input{05_conclusion.tex}
+	\cleardoublepage
+
+	{
+	\backmatter
+	\input{06_bibliography.tex}
+	\cleardoublepage
+	}
+
+	\appendix
+	\acresetall
+	\input{10_shade.tex}
+	\cleardoublepage
+
+	\acresetall
+	\input{11_hybridnet.tex}
+	\cleardoublepage
+
+	\acresetall
+	\input{12_dualdis.tex}
+	\cleardoublepage
+
+\end{document}

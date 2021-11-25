@@ -1,0 +1,52 @@
+\cleardoublepage
+\setcounter{page}{1}
+
+\chapter{Abstract}
+
+For a decade now, computer vision models based on deep convolutional neural networks (ConvNets) have demonstrated their capability to produce excellent results and are now reaching the stage of ``industrialization'', being used more and more in commercial products. The most frequent application is probably image classification, for which a model transforms the input image into a series of latent representations until obtaining the prediction of the class to which the image should belong. For this task, recent models such as ResNets are able to obtain impressive human-like performance on ImageNet, a large and complex dataset.
+%
+In this thesis, we work at improving the ``quality'' of the latent representations of ConvNets for different tasks. The general goal consists in making those representations more robust to non-relevant variations and structuring the information in the latent space.
+
+First, we focus on making these representations more effective for classification by proposing a new regularization method called SHADE. To do so, using information theory metrics, we propose to minimize the entropy of the representations conditionally to the class label, thus making the representation more robust and invariant to the intra-class variability that is not useful for classification.
+
+Then, we propose to structure the information in two complementary latent spaces with our model called HybridNet. Doing so, we solve a conflict between the objectives of two motivations that seem complementary but are practically incompatible in a regular model: producing more invariant representations for classification and extracting more information for reconstruction. While the first one aims at removing information, the second adds it. By structuring the information in two latent spaces, we are able to release the constraint posed by classical architecture, allowing to obtain better results in the context of semi-supervised learning.
+
+Finally, to go further in structuring the latent space, we propose to address the recent problem of disentangling, \ie explicitly separating and representing independent factors of variation of the dataset. For this, we propose DualDis, an approach that combines a two-branch architecture to structure two complementary types of information, and the use of regular and adversarial classification costs to ensure an effective separation of the information. This approach allows us to obtain better representations compared to existing methods. It also allows to easily perform semantic image editing but also data augmentation by generating new images that can be used to train a classifier.
+
+\cleardoublepage
+
+
+\chapter{R\'esum\'e}
+
+\selectlanguage{french}
+
+Depuis le début de la décennie, les algorithmes de traitement d'images basés sur les réseaux de neurones convolutifs profonds (ConvNets) ont démontré leur capacité à produire d'excellent résultats et permettent désormais d'envisager leur mise en application dans de plus en plus de cas. Ces modèles transforment une image en une succession de représentations latentes jusqu'à obtenir une prediction (classe, segmentation, \etc).
+%
+Dans cette thèse, nous travaillerons à l'amélioration de la qualité des représentations latentes des ConvNets pour diverses tâches. L'objectif général est de rendre ces représentations plus robustes aux variations et de structurer l'espace de resprésentation afin d'améliorer l'organisation de l'information dans cet espace.
+
+Dans un premier temps, nous nous intéressons à rendre ces représentations plus performantes pour la classification en proposant une méthode de régularisation nommée SHADE. Pour se faire, via des métriques liées à la théorie de l'information, nous minimisons l'entropie des représentations conditionnellement à la classe, permettant ainsi de rendre ces représentations plus robustes à la variabilité intra-classe, inutile pour la classification.
+
+Dans un second temps, nous proposons de structurer l'information en deux sous-espaces latents complémentaires avec notre modèle nommé HybridNet. Se faisant, nous résolvons un conflit entre deux motivations complémentaires mais pratiquement incompatibles pour améliorer la qualité des représentations : l'augmentation de l'invariance des représentations et la représentation de davantage d'information via la reconstruction. Alors que la première vise à supprimer de l'information, la seconde en ajoute. La structuration en deux espaces permet ainsi de relâcher la contrainte posée par les architectures classiques, permettant ainsi d'obtenir de meilleurs résultats en classification dans un contexte semi-supervisé.
+
+Enfin, pour aller plus loin dans la structuration de l'espace latent, nous considérons le problème du \textit{disentangling}, c'est-à-dire la séparation et représentation explicite de facteurs sémantiques indépendants. Nous proposons DualDis, une approche qui combine une architecture à deux branches pour structurer deux types d'informations, et l'utilisation de coûts de classification classiques et adverses afin d'assurer une séparation efficace de l'information. Cette approche nous permet d'obtenir des représentations de meilleure qualité comparativement aux méthodes existantes. Elle permet ainsi l'édition sémantique d'images mais aussi l'augmentation de données pour la classification par la génération de nouvelles images.
+
+\selectlanguage{english}
+
+
+\cleardoublepage
+\chapter{Remerciements}
+
+\selectlanguage{french}
+
+J'aimerai remercier les nombreuses personnes qui ont concouru à l'existence de ce manuscrit.
+
+Pour commencer chronologiquement, j'aimerais remercier mes professeurs de \textit{machine learning} à l'INSA Rouen : Stéphane Canu, Gilles Gasso et Romain Hérault. La grande qualité de leurs cours et de leur pédagogie m'a passionné pour ce sujet et m'a donné envie de me lancer dans cette thèse.
+
+Ensuite, j'aimerais remercier Matthieu Cord et Nicolas Thome, qui m'ont accueilli au LIP6 et m'ont encadré, aidé et guidé dans le sinueux domaine du \textit{deep learning} durant les 4 ans passés à leurs côtés. Je remercie également les chercheurs avec qui j’ai eu l’occasion de travailler, en particulier David Picard, Christian Wolf, Graham Taylor et Greg Mori. Nos discussions m'ont permis de découvrir de nombreux travaux et d'affiner les idées de cette thèse. Je remercie bien évidemment aussi le jury pour l'intérêt qu'ils ont porté à mes travaux.
+
+Vient ensuite le tour de mes camarades de bureau, les ``Chordettes'', avec qui j’ai passé de très bons moments dans une très bonne ambiance. Par ordre chronologique : Thibaut Durand, Marion Chevalier, Michael Blot, Xin Wang, Taylor Mordan, Micael Carvalho, Hedi Ben-Younès, Rémi Cadène, Yifu Chen, Arnaud Dapogny, Antoine Saporta, Corentin Dancette, Arthur Douillard. Ce ``petit'' groupe soudé a clairement contribué à cette thèse par son esprit de partage et d'entraide important. Il est évident que les discussions avec eux sont une part importante de ce que ce doctorat m'a apporté. Pour les mêmes raisons, je remercie tous les thésards et professeurs de l'équipe MLIA (trop nombreux pour tous les citer) ; ainsi que les personnes du LIP6 dont l'aide a été précieuse, en particulier Nadine Taniou et Christophe Bouder.
+
+Enfin pour finir, je remercie bien évidemment ma famille et mes amis pour leur soutien durant ce marathon, et tout particulièrement ma fiancée Clara pour son importance à mes côtés au quotidien.
+
+
+\selectlanguage{english}

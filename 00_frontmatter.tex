@@ -1,0 +1,106 @@
+\begin{titlepage}
+
+\vspace*{-2.5cm}
+\includegraphics[height=0.15\columnwidth]{images/sorbonne}
+\vspace*{0.5cm}
+
+\begin{center}
+
+{\large \textbf{T\normalsize{HÈSE DE}\large{} D\normalsize{OCTORAT DE}\large{} S\normalsize{ORBONNE}\large{} U\normalsize{NIVERSITÉ}}}\\
+Spécialité \textbf{Informatique}\\ 
+École Doctorale Informatique, Télécommunications et Électronique (Paris)
+
+\vspace*{1.5cm}
+
+{\Large \textbf{Improving Latent Representations of ConvNets \newline for Visual Understanding}} \\[0.5em]
+{\large \textbf{Amélioration des représentations latentes des ConvNets \newline pour l'interprétation de données visuelles}}
+
+\vspace*{1.2cm}
+
+Présentée par\\
+{\large \textbf{Thomas {ROBERT}}}
+
+\vspace*{2mm}
+
+Dirigée par\\
+\textbf{Matthieu {CORD} et Nicolas {THOME}}
+
+\vspace*{5mm}
+
+Pour obtenir le grade de \ \\
+\textbf{DOCTEUR de SORBONNE UNIVERSITÉ} \ \\
+
+\vspace*{5mm}
+
+\end{center}
+
+\definecolor{mygray}{gray}{0.37}
+\newcommand{\affil}[1]{\multicolumn{2}{@{\hskip 18pt}l@{}}{\small \itshape \textcolor{mygray}{#1}}}
+
+%\vspace*{5mm}
+\flushleft{
+  Présentée et soutenue publiquement le 03 octobre 2019\\[2mm]
+Devant le jury composé de :\\[2mm]
+\begin{tabularx}{\textwidth}{@{\hskip 18pt}Xr}
+  M. Stéphane \textsc{Canu} & Rapporteur \\[-0.5mm]
+  \affil{Professeur, INSA Rouen Normandie -- LITIS} \\[0.5mm]
+  M. Greg \textsc{Mori} & Rapporteur \\[-0.5mm]
+  \affil{Professeur, Simon Fraser University \& Research Director, Borealis AI Vancouver} \\[0.5mm]
+  Mme Catherine \textsc{Achard} & Examinatrice \\[-0.5mm]
+  \affil{Professeure, Sorbonne Université -- ISIR} \\[0.5mm]
+  M. Karteek \textsc{Alahari} & Examinateur \\[-0.5mm]
+  \affil{Chargé de recherche, Inria Grenoble -- Thoth} \\[0.5mm]
+  M. David \textsc{Picard} & Examinateur \\[-0.5mm]
+  \affil{Chercheur HdR, École Nationale des Ponts et Chaussées} \\[0.5mm]
+  M. Nicolas \textsc{Thome} & Co-directeur de thèse\\[-0.5mm]
+  \affil{Professeur, Conservatoire National des Arts et Métiers -- CEDRIC} \\[0.5mm]
+  M. Matthieu \textsc{Cord} & Directeur de thèse \\[-0.5mm]
+  \affil{Professeur, Sorbonne Université -- LIP6 \& Senior Scientist, Valeo.ai} \\[0.5mm]
+  \end{tabularx}
+}
+%}
+
+\end{titlepage}
+\thispagestyle{empty}
+
+\hfill
+
+\vfill
+
+\noindent\myName: \textit{\myTitle,}
+\textcopyright\ 2019
+
+
+\input{00b_resume.tex}
+
+
+% TOC
+
+% \acused{AE}
+% \acused{SHADE}
+% \acused{SWWAE}
+% \acused{HySWWAE}
+\microtypesetup{protrusion=false}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\texorpdfstring{\noexpand\spacedlowsmallcaps{\contentsname}}{\contentsname}}
+\setcounter{tocdepth}{1} 
+\setcounter{minitocdepth}{2}
+\setcounter{secnumdepth}{3}
+\manualmark
+\markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
+\tableofcontents
+\adjustmtc
+\automark[section]{chapter}
+\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
+\microtypesetup{protrusion=true}
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\texorpdfstring{\noexpand\spacedlowsmallcaps{\listfigurename}}{\listfigurename}}
+\listoffigures
+\adjustmtc
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\texorpdfstring{\noexpand\spacedlowsmallcaps{\listtablename}}{\listtablename}}
+\listoftables
+\adjustmtc

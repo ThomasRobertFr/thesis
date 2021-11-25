@@ -1,0 +1,280 @@
+% document options
+\newcommand{\myTitle}{Improving Latent Representations of ConvNets for Visual Understanding}
+\newcommand{\myName}{Thomas Robert}
+
+% character encoding and languages
+\usepackage[english,french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{placeins}
+
+% math packages
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\usepackage{empheq}
+\usepackage{stmaryrd}
+\usepackage{nicefrac}
+
+\usepackage{adjustbox}
+\usepackage{pifont}
+\usepackage{multirow}
+
+\usepackage{mathrsfs}
+
+% thesis style
+\usepackage[%
+%    drafting,
+%    minionpro,
+%    minionprospacing,
+    dottedtoc,
+    floatperchapter,
+    parts
+]{template/classicthesis}
+%\usepackage{MnSymbol}
+
+% define page size and margins for the final print
+\usepackage{geometry}
+\geometry{paperwidth=21cm,paperheight=29.7cm,
+bindingoffset=0.89cm, % gutter
+inner=2cm, % inside margin
+outer=3cm, % outside margin
+vmargin=3.5cm, % top and bottom margins
+marginparsep=-1cm,
+marginparwidth=3cm,
+}
+
+% tables
+\usepackage{tabularx}
+\newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
+\usepackage{adjustbox}
+
+% algorithms
+\usepackage[chapter]{algorithm}
+
+% notation
+\usepackage{template/notation}
+
+% fixes for marginpar and latex
+\usepackage{mparhack}
+
+% indexing
+\usepackage{makeidx}
+\makeindex
+
+% graphics, figures, captions
+%\usepackage{graphicx}
+\usepackage{graphbox}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{standalone}
+\captionsetup[sub]{font=normalsize}
+
+% table
+\usepackage{template/slashbox}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs}
+
+\renewcommand{\subsectionautorefname}{Section}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\chapterautorefname}{Chapter}
+\def\algorithmautorefname{Algorithm}
+
+\addto\extrasenglish{%
+  \renewcommand{\chapterautorefname}{Chapter}%
+  \renewcommand{\sectionautorefname}{Section}%
+  \renewcommand{\subsectionautorefname}{Section}%
+  \renewcommand{\subsubsectionautorefname}{Section}%
+%   \renewcommand{\equationautorefname}{Eq.}%
+}
+\usepackage{nameref}
+
+
+% bibliography
+\usepackage[style=english]{csquotes}
+\usepackage[%
+    style=authoryear,%
+    dashed=false,%
+    doi=false,%
+    isbn=false,%
+    hyperref=auto,%
+    backref,%
+    backrefstyle=three,%
+    uniquename=true,%
+    uniquelist=false,%minyear
+    maxbibnames=99,%
+    maxcitenames=2
+]{biblatex}
+
+\newcommand{\citet}{\textcite}
+\newcommand{\citep}{\parencite}
+
+\makeatletter
+\DeclareCiteCommand{\fullcite}
+  {\usebibmacro{prenote}}
+  {\usedriver
+     {\defcounter{minnames}{6}%
+      \defcounter{maxnames}{6}}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}
+}
+\DeclareCiteCommand{\fullcite}
+  {\defcounter{maxnames}{\blx@maxbibnames}%
+    \usebibmacro{prenote}}
+  {\usedriver
+     {\DeclareNameAlias{sortname}{default}}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+\DeclareCiteCommand{\footfullcite}[\mkbibfootnote]
+  {\defcounter{maxnames}{\blx@maxbibnames}%
+    \usebibmacro{prenote}}
+  {\usedriver
+     {\DeclareNameAlias{sortname}{default}}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+\let\citep\parencite
+\makeatother
+%\renewbibmacro{in:}{%
+%  \ifentrytype{article}{}{%
+%  \printtext{\bibstring{in}\intitlepunct}}}
+
+% theorems, definitions
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\providecommand*{\lemmaautorefname}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% acronyms
+\usepackage[printonlyused,smaller]{template/acronym} % nice macros for handling all acronyms in the thesis
+\renewcommand{\bflabel}[1]{{#1}\hfill} % fix the list of acronyms
+
+% lists
+\usepackage[inline]{enumitem}
+\setlist[itemize]{label=\textbullet, itemsep=8.0pt, topsep=8.0pt}
+
+
+% dummy counter for correct TOC etc
+\newcounter{dummy}
+
+% for cover page
+\usepackage{pdfpages}
+
+\usepackage[english,nohints]{minitoc}
+%\setcounter{\secttocdepth}{3}
+% \setcounter{minitocdepth}{3}
+
+% paragraph title
+% \titleformat{\paragraph}[runin]{\bfseries\scshape}{\theparagraph}{1em}{}
+
+% \setkomafont{section}{\LARGE}
+% \setkomafont{subsection}{\Large}
+% \setkomafont{subsubsection}{\large}
+\usepackage[T1]{fontenc}
+
+\newenvironment{chapabstract}
+{
+    \begin{center}%
+    \vspace*{0.5cm}
+      \textbf{\textit{ \chaptertitlename~abstract }} \vspace{-.5em}\vspace{0pt}
+    \end{center}
+    \list{}{%
+    \setlength{\leftmargin}{10mm}% <---------- CHANGE HERE
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax
+}
+{\par}
+\makeatother
+
+\usepackage{lettrine}
+
+\usepackage{etoolbox}
+\newcommand{\killdeactivateaddvspace}{\let\deactivateaddvspace\relax}
+\AtEndPreamble{\addtocontents{lof}{\protect\killdeactivateaddvspace} \addtocontents{lot}{\protect\killdeactivateaddvspace}}
+
+\makeatletter
+%\newcommand{\chapterwithfigures}[1]{\addxcontentsline{lof}{chapteratlist}[{\large\chaptertitlename~\thechapter: #1}]{\Large\scr@ds@tocentry}}%
+\newcommand{\chapterwithfigures}[1]{\addxcontentsline{lof}{chapteratlist}[{}]{\large\textsc{\chaptertitlename}~\thechapter: #1}}%
+\makeatother
+
+\makeatletter
+%\newcommand{\chapterwithtables}[1]{\addxcontentsline{lot}{chapteratlist}[{\large\chaptertitlename~\thechapter: #1}]{\Large\scr@ds@tocentry}}%
+\newcommand{\chapterwithtables}[1]{\addxcontentsline{lot}{chapteratlist}[{}]{\large\textsc{\chaptertitlename}~\thechapter: #1}}%
+\makeatother
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage[para,online,flushleft]{threeparttable}
+
+\floatstyle{plain}
+\newfloat{myalgo}{tbhp}{mya}
+\newenvironment{limitedalgorithm}[2][tbh]%
+{\begin{myalgo}[#1]
+\centering
+\begin{minipage}{#2}
+\begin{algorithm}[H]}%
+{\end{algorithm}
+\end{minipage}
+\end{myalgo}}
+
+\definecolor{Gray}{gray}{0.9}
+
+\newcommand\invisiblesection[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \sectionmark{#1}%
+}
+
+\DeclareMathOperator*{\Pool}{Pool}
+
+\usepackage{lipsum}
+\usepackage{colortbl}
+\usepackage{footmisc}
+\usepackage{setspace}
+
+\newenvironment{nscenter}
+ {\parskip=0pt\par\nopagebreak\centering}
+ {\par\noindent\ignorespacesafterend}
+
+ \definecolor{greenlinks}{HTML}{006B57}
+ \definecolor{bluelinks}{HTML}{013F69}
+ % hyperref
+%\usepackage{bookmark,hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\hypersetup{%
+    %draft,	% = no hyperlinking at all (useful in b/w printouts)
+    colorlinks=true, linktocpage=true, pdfstartpage=1, pdfstartview=FitV,%
+    % uncomment the following line if you want to have black links (e.g., for printing)
+    %colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=1, pdfstartview=FitV,% 
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+    plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+    bookmarksdepth=2,%
+    hypertexnames=true, pdfhighlight=/O,%hyperfootnotes=true,%nesting=true,%frenchlinks,%
+    urlcolor=bluelinks, linkcolor=bluelinks, citecolor=greenlinks, %pagecolor=RoyalBlue,%
+    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+    pdftitle={\myTitle},%
+    pdfauthor={\myName},%
+    pdfsubject={},%
+    pdfkeywords={},%
+    pdfpagelayout=TwoPageRight,%
+}
+
