@@ -2,7 +2,25 @@
 
 **French title: Amélioration des représentations latentes des ConvNets pour l'interprétation de données visuelles**
 
-This repository is an archive of my PhD manuscript and the slides of the defense. Just below are the abstracts followed by some technical advices on writing a manuscript.
+This repository is an archive of my PhD manuscript and the slides of the defense. Just below are the abstracts (french and english) and some technical advices on writing a manuscript.
+
+
+### My advices on writing a PhD manuscript
+
+- Properly configure and take a bit of time to learn the features of a nice LaTeX IDE. Personally, I used the "LaTeX Workshop" extension of VSCode, it was great, I recommend it.
+- Don't loose yourself into complex LaTeX, you're writing a document, not programming. However, take a bit of time to properly use a few key packages. In my PhD it was:
+    - `autoref` to refer to your figures, tables, chapters, equations with nice links. (`\autoref{eq:eqname}` writes `Equation (N)` with the link on the whole text).
+    - `acronym` to reuse an accronym everywhere and provide a link to the full text in the accronyms table. Learn to use `\ac{}` vs `\acs{}` for the singular vs plural.
+    - `biblatex` for bibliographical links. Learn to use the variants `\cite`, `\parencite`, etc. Cf [this doc](http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf).
+    - `booktabs` to make beautiful table. [Read the doc](https://ctan.org/pkg/booktabs?lang=en), it's not that long and comes with nice advices.
+    - `rotating` to rotate the tables and figures (`\sidewaystable` and `\sidewaysfigure`) to have vertical tables and figures.
+    - Making nice figures & tables captions with the custom command `\titlecaption{Short title}{Explaination}` to only have the short caption in the list of figures & tables.
+- If you have not already, you can [read this guideline](http://www.pamitc.org/documents/mermin.pdf) on how to integrate math into text, it's the one provided by CVPR.
+- Don't directly apply your habits of writing code to writing a document, think of what is really gonna help you write, read and rewrite. For example for a text document I'd rather have one big file in which I can scroll than many small files that I need to switch between. That's my preference, find yours, all I'm saying is, don't just do small files like you're writing Python, you're not.
+- Cleanup your `.bib` file. I personally remove all the unnecessary fields that look ugly to keep the minimum useful info (authors, title, published in, year). I use predefined strings for conf/journals names so that it's the consistent.
+- I draw my figures in PowerPoint, export a big PDF with 1 figure per page and have a script to split the pages and remove blank
+- My LaTeX manuscript compiles with `pdflatex` and `biber`.
+
 
 ### Abstract (Enlish)
 
@@ -24,20 +42,3 @@ Dans un premier temps, nous travaillons à la régularisation de ces représenta
 Dans un second temps, nous proposons de structurer l'information en deux sous-espaces latents complémentaires, résolvant un conflit entre l'invariance des représentations et la reconstruction. La structuration en deux espaces permet ainsi de relâcher la contrainte posée par les architectures classiques, permettant ainsi d'obtenir de meilleurs résultats en classification semi-supervisé.
 
 Enfin, nous nous intéressons au disentangling, c'est-à-dire la séparation de facteurs sémantiques indépendants. Nous poursuivons nos travaux de structuration des espaces latent et utilisons des coûts adverses pour assurer une séparation efficace de l'information. Cela permet d'améliorer la qualité des représentations ainsi que l'édition sémantique d'images.
-
-
-### My advices on writing a PhD manuscript
-
-- Properly configure and take a bit of time to learn the features of a nice LaTeX IDE. Personally, I used the "LaTeX Workshop" extension of VSCode, it was great, I recommend it.
-- Don't loose yourself into complex LaTeX, you're writing a document, not programming. However, take a bit of time to properly use a few key packages. In my PhD it was:
-    - `autoref` to refer to your figures, tables, chapters, equations with nice links. (`\autoref{eq:eqname}` writes `Equation (N)` with the link on the whole text).
-    - `acronym` to reuse an accronym everywhere and provide a link to the full text in the accronyms table. Learn to use `\ac{}` vs `\acs{}` for the singular vs plural.
-    - `biblatex` for bibliographical links. Learn to use the variants `\cite`, `\parencite`, etc. Cf [this doc](http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf).
-    - `booktabs` to make beautiful table. [Read the doc](https://ctan.org/pkg/booktabs?lang=en), it's not that long and comes with nice advices.
-    - `rotating` to rotate the tables and figures (`\sidewaystable` and `\sidewaysfigure`) to have vertical tables and figures.
-    - Making nice figures & tables captions with the custom command `\titlecaption{Short title}{Explaination}` to only have the short caption in the list of figures & tables.
-- If you have not already, you can [read this guideline](http://www.pamitc.org/documents/mermin.pdf) on how to integrate math into text, it's the one provided by CVPR.
-- Don't directly apply your habits of writing code to writing a document, think of what is really gonna help you write, read and rewrite. For example for a text document I'd rather have one big file in which I can scroll than many small files that I need to switch between. That's my preference, find yours, all I'm saying is, don't just do small files like you're writing Python, you're not.
-- Cleanup your `.bib` file. I personally remove all the unnecessary fields that look ugly to keep the minimum useful info (authors, title, published in, year). I use predefined strings for conf/journals names so that it's the consistent.
-- I draw my figures in PowerPoint, export a big PDF with 1 figure per page and have a script to split the pages and remove blank
-- My LaTeX manuscript compiles with `pdflatex` and `biber`.
