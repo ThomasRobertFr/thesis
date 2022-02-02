@@ -10,7 +10,7 @@ This repository is an archive of my PhD manuscript and the slides of the defense
 - Properly configure and take a bit of time to learn the features of a nice LaTeX IDE. Personally, I used the "LaTeX Workshop" extension of VSCode, it was great, I recommend it.
 - Don't loose yourself into complex LaTeX, you're writing a document, not programming. However, take a bit of time to properly use a few key packages. In my PhD it was:
     - `autoref` to refer to your figures, tables, chapters, equations with nice links. (`\autoref{eq:eqname}` writes `Equation (N)` with the link on the whole text).
-    - `acronym` to reuse an accronym everywhere and provide a link to the full text in the accronyms table. Learn to use `\ac{}` vs `\acs{}` for the singular vs plural.
+    - `acronym` to reuse an accronym everywhere and provide a link to the full text in the accronyms table. Learn to use `\ac{}` vs `\acs{}` for the singular vs plural. Waring: don't use it in section titles, it will break latex.
     - `biblatex` for bibliographical links. Learn to use the variants `\cite`, `\parencite`, etc. Cf [this doc](http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf).
     - `booktabs` to make beautiful table. [Read the doc](https://ctan.org/pkg/booktabs?lang=en), it's not that long and comes with nice advices.
     - `rotating` to rotate the tables and figures (`\sidewaystable` and `\sidewaysfigure`) to have vertical tables and figures.
